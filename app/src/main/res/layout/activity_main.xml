@@ -9,10 +9,107 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_AlunosPresenca"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/til_posicao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/alunos_presenca_item_list" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_posicao"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearlayout"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_posicao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Posição"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fab_add"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_nome"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:hint="Nome do Aluno"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_presenca"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:hint="P/F"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat= "@drawable/ic_baseline_add_24"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="8dp"
+
+        app:layout_constraintBottom_toTopOf="@id/linearlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat= "@drawable/ic_baseline_delete_24"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="8dp"
+
+        app:layout_constraintBottom_toTopOf="@id/linearlayout"
+        app:layout_constraintEnd_toStartOf="@id/fab_delete"
+        app:srcCompat= "@drawable/ic_baseline_sync_24"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_margin="8dp"
+
+        app:layout_constraintBottom_toTopOf="@id/linearlayout"
+        app:layout_constraintEnd_toStartOf="@id/fab_change"
+        app:srcCompat= "@drawable/ic_baseline_filter_alt_24"/>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
